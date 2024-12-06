@@ -1,0 +1,22 @@
+import 'package:flutter/material.dart';
+
+class CategoryContainer extends StatelessWidget {
+  const CategoryContainer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Color.fromARGB(255, 193, 196, 41),
+      ),
+      child: const Text(
+        'data',
+        style: TextStyle(
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+}

@@ -1,0 +1,105 @@
+import 'package:fitquest/category.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class CategoriesScreen extends StatelessWidget {
+  const CategoriesScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: Transform.translate(
+          offset: const Offset(15, 0),
+          child: Padding(
+            padding: const EdgeInsets.all(2),
+            child: Container(
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.black,
+                image: DecorationImage(
+                  image: AssetImage("images/uchiha-madara.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
+        ),
+        title: const Padding(
+          padding: EdgeInsets.only(
+            left: 10,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Welcome back",
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+              Text(
+                "Madara Uchiha",
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          Transform.translate(
+            offset: const Offset(10, 0),
+            child: const IconButton(
+              onPressed: null,
+              icon: Icon(
+                CupertinoIcons.bell,
+                color: Colors.black,
+                size: 26.0,
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: const Offset(-15, -10),
+            child: Container(
+              width: 18,
+              height: 18,
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 250, 17, 0),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Transform.translate(
+                offset: const Offset(2, 0),
+                child: const Text(
+                  "9+",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      body: GridView(
+        padding: EdgeInsets.all(20),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 1.5,
+          crossAxisSpacing: 40,
+          mainAxisSpacing: 40,
+        ),
+        children: const [
+          CategoryContainer(),
+          CategoryContainer(),
+          CategoryContainer(),
+          CategoryContainer()
+        ],
+      ),
+    );
+  }
+}
